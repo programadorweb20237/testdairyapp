@@ -18,12 +18,17 @@ const upload = multer({ storage });
 // Middleware para procesar datos de formularios
 app.use(express.urlencoded({ extended: true }));
 
+
 // Configurar express-session
 app.use(session({
-  secret: 'tu_secreto_secreto', // Cambia esto por una cadena secreta más segura
-  resave: false,
-  saveUninitialized: true,
-}));
+    secret: 'tu_secreto_secreto',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false, maxAge: 2592000000 } // 30 días en milisegundos
+  }));
+
+
+
 
 // Ruta para la página de inicio
 app.get('/', (req, res) => {
