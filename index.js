@@ -47,7 +47,7 @@ app.post('/upload', upload.single('image'), async (req, res) => {
         secure: false, // Establecer a 'false' para usar TLS
         auth: {
           user: credentials.email, // Tu dirección de correo electrónico de Outlook
-          pass: credentials.password, // Tu contraseña de Outlook
+          pass: credentials.password, // Tu contraseña de Outlook 
         },
       });
 
